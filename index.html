@@ -50,25 +50,28 @@
         .main-header .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
         }
         
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            font-weight: 700;
-            color: #ffffff;
-            text-decoration: none;
-            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 20px;
+        }
+        
+        .logo img {
+            max-width: 100%;
+            height: auto;
+            max-height: 120px;
         }
         
         .search-bar {
-            flex: 1;
-            max-width: 500px;
-            margin: 0 40px;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 15px;
         }
         
         .search-bar input {
@@ -85,6 +88,7 @@
             display: flex;
             gap: 25px;
             align-items: center;
+            justify-content: center;
         }
         
         .header-actions a {
@@ -371,7 +375,9 @@
     <!-- Main Header -->
     <div class="main-header">
         <div class="container">
-            <a href="#" class="logo">FRAC STACKER</a>
+            <a href="#" class="logo">
+                <img src="FSbannerb.png" alt="Frac Stacker">
+            </a>
             <div class="search-bar">
                 <input type="text" placeholder="Search for fractional silver rounds...">
             </div>
