@@ -16,6 +16,7 @@
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: #fff;
             min-height: 100vh;
+            line-height: 1.6;
         }
         
         .banner {
@@ -36,13 +37,6 @@
             padding: 20px;
             text-align: center;
             border-bottom: 2px solid #c0c0c0;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            letter-spacing: 4px;
-            margin-bottom: 10px;
         }
         
         .tagline {
@@ -70,77 +64,89 @@
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
         
         .hero {
             text-align: center;
-            padding: 60px 20px;
+            margin-bottom: 60px;
         }
         
-        .hero h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+        .hero h1 {
+            font-size: 2.5rem;
             font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            line-height: 1.3;
         }
         
-        .hero p {
-            font-size: 1.2rem;
-            color: #aaa;
-            max-width: 600px;
-            margin: 0 auto 30px;
-            line-height: 1.6;
+        .content-section {
+            margin-bottom: 50px;
         }
         
-        .sections {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        @media (max-width: 992px) {
-            .sections {
-                grid-template-columns: 1fr;
-            }
+        .content-section h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            color: #c0c0c0;
+            margin-bottom: 20px;
         }
         
-        .section-card {
+        .content-section h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #e8e8e8;
+            margin: 30px 0 15px;
+        }
+        
+        .content-section p {
+            font-size: 1.1rem;
+            color: #ddd;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .content-section ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .content-section ul li {
+            font-size: 1.05rem;
+            color: #ddd;
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .content-section ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #c0c0c0;
+            font-weight: bold;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 60px 0;
+            padding: 40px 20px;
             background: rgba(255,255,255,0.05);
             border-radius: 15px;
-            padding: 40px;
-            text-align: center;
-            border: 1px solid rgba(192,192,192,0.2);
-            transition: transform 0.3s, border-color 0.3s;
-        }
-        
-        .section-card:hover {
-            transform: translateY(-5px);
-            border-color: #c0c0c0;
-        }
-        
-        .section-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: #c0c0c0;
-        }
-        
-        .section-card p {
-            color: #aaa;
-            line-height: 1.6;
-            margin-bottom: 20px;
+            border: 2px solid rgba(192,192,192,0.2);
         }
         
         .btn {
             display: inline-block;
-            padding: 12px 30px;
+            padding: 15px 40px;
+            margin: 10px;
             background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
             color: #1a1a2e;
             text-decoration: none;
             border-radius: 25px;
             font-weight: 500;
+            font-size: 1.1rem;
             transition: transform 0.2s, box-shadow 0.2s;
         }
         
@@ -157,35 +163,19 @@
             color: #888;
         }
         
-        .subscription-card {
-            background: linear-gradient(135deg, rgba(192,192,192,0.1), rgba(192,192,192,0.05));
-            border: 2px solid rgba(192,192,192,0.3);
-        }
-
-        .subscription-card h3 {
-            color: #e8e8e8;
-        }
-
-        .subscription-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
-            color: #1a1a2e;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
-
         @media (max-width: 768px) {
-            .sections {
-                grid-template-columns: 1fr;
+            .hero h1 {
+                font-size: 1.8rem;
             }
             
-            h1 {
-                font-size: 1.8rem;
+            .content-section h2 {
+                font-size: 1.6rem;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 300px;
             }
         }
     </style>
@@ -200,43 +190,140 @@
     </header>
     
     <nav>
-        <a href="#collectors">For Collectors</a>
-        <a href="#gifts">Silver Grams</a>
         <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#collection">Collection</a>
+        <a href="#club">Monthly Club</a>
+        <a href="#gift">Send a Gram</a>
     </nav>
     
     <div class="container">
         <section class="hero">
-            <h2>Stack Silver, One Gram at a Time</h2>
-            <p>Discover our collection of beautifully crafted 1 gram silver rounds. Perfect for collectors building their stack or as meaningful gifts that hold real value.</p>
+            <h1>Stack Silver the Way It Was Meant to Be Stacked—One Beautiful Gram at a Time</h1>
         </section>
         
-        <div class="sections">
-            <div class="section-card" id="collectors">
-                <h3>Frac Stacker</h3>
-                <p>For the serious collector. Build your silver stack with premium fractional rounds. Each piece is crafted with precision and backed by pure silver content.</p>
-                <a href="#" class="btn">Browse Collection</a>
-            </div>
+        <div class="content-section">
+            <p>You know the feeling.</p>
             
-            <div class="section-card" id="gifts">
-                <h3>Silver Grams</h3>
-                <p>Send a gram of encouragement, appreciation, or affection. Our gift-ready silver rounds come with custom messaging and beautiful packaging.</p>
-                <a href="#" class="btn">Send a Gram</a>
-            </div>
+            <p>You're scrolling through another silver dealer's catalog. Page after page of the same mass-produced rounds. Generic eagles. Overpriced maples. Nothing that makes you <em>want</em> to hold it.</p>
             
-            <div class="section-card subscription-card" id="subscription">
-                <span class="subscription-badge">Monthly</span>
-                <h3>Subscription Box</h3>
-                <p>Random selection of hand made fracs delivered monthly. When new items arrive you'll get them first.</p>
-                <a href="#" class="btn">Subscribe</a>
-            </div>
+            <p>And if you're new to stacking? The barrier to entry feels impossible. A single ounce demands serious commitment before you even know if this is for you.</p>
+            
+            <p><strong>Here's what most dealers won't tell you:</strong></p>
+            
+            <p>Stacking silver doesn't have to mean buying the same boring bullion everyone else has. And it definitely doesn't require dropping serious money before you feel like you own something real.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>What's Broken in the Silver Market</h2>
+            
+            <p><strong>For seasoned stackers:</strong> You've been at this for years. You know your weight, your premiums. But somewhere along the way, the <em>joy</em> of collecting got replaced by spreadsheet tracking. Your stack became a number instead of a collection. Where's the craftsmanship? Where's the piece that makes you smile when you hold it?</p>
+            
+            <p><strong>For new stackers:</strong> You <em>want</em> to start building a position. You understand why. But every time you look at prices, you hesitate. So you wait. And while you wait, nothing gets stacked.</p>
+            
+            <p><strong>The disconnect:</strong> Silver stacking has become transactional instead of <em>experiential</em>. It's about ounces and spot prices—but it's lost the soul. The tangible joy of holding something beautiful. The thrill of discovering a new design.</p>
+            
+            <p>And that's exactly why Frac Stacker exists.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>A Different Way to Build Your Stack</h2>
+            
+            <p>Instead of forcing large commitments, we specialize in <strong>1-gram fractional silver rounds</strong>. Handmade. Unique designs. Actual artisan craftsmanship—not cookie-cutter bullion stamped out by the millions.</p>
+            
+            <p>Every piece is <strong>real silver</strong>. Every piece has <strong>weight and value</strong>. But instead of overwhelming price tags, you're looking at accessible entry points that let you stack consistently, discover new designs, and <em>actually enjoy</em> the process.</p>
+            
+            <p><strong>Think of it this way:</strong> Would you rather own a dozen identical rounds... or a curated collection of handmade fractional pieces, each with its own story, aesthetic, and collectible appeal?</p>
+        </div>
+        
+        <div class="content-section" id="about">
+            <h2>What Makes Frac Stacker Different</h2>
+            
+            <h3>Extensive Fractional Options</h3>
+            <p>An ever-expanding catalog of handmade 1-gram rounds with themes from retro 80s/90s nostalgia to ancient artifact aesthetics. New designs drop regularly. Limited runs mean certain pieces become collectible.</p>
+            
+            <h3>Monthly Discovery Club</h3>
+            <p>Every month, subscribers receive a curated selection of random handmade rounds. You don't pick—we surprise you. And here's the kicker: <strong>when new items arrive, club members get them first.</strong></p>
+            
+            <p>It's not just stacking silver—it's <em>discovering</em> it. For seasoned stackers, it keeps collections fresh without research fatigue. For new stackers, it's a guided entry without decision paralysis.</p>
+            
+            <h3>Flash Sales & Volume Discounts</h3>
+            <p>Larger orders get discounted. Flash sales offer exclusive access. The more you stack, the better your cost-per-gram becomes.</p>
+            
+            <h3>Handmade Craftsmanship</h3>
+            <p>Most of what we offer is handmade. Each piece has character. Slight variations. Artisan touches. When you hold a Frac Stacker round, you feel the difference.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>Who This Is For</h2>
+            
+            <p><strong>Seasoned Stackers:</strong> You want pieces that stand out. That have story. That you'd actually <em>show</em> someone instead of just logging in a spreadsheet. Frac Stacker gives you variety and collectibility without disrupting your core strategy.</p>
+            
+            <p><strong>New Stackers:</strong> Start small. Build momentum. Stack consistently without the pressure of large purchases. A few grams this week, a few more next month. Before you know it, you've built a position—and enjoyed every step.</p>
+            
+            <p><strong>Gift-Givers:</strong> Silver isn't just for stackers. A gram of silver is a gram of encouragement, appreciation, or celebration. Beautiful packaging. Meaningful weight. A gift that <em>lasts</em>.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>What You Get</h2>
+            
+            <ul>
+                <li>Handmade 1-gram silver rounds with unique designs</li>
+                <li>Real silver content—not plated nonsense</li>
+                <li>Variety—new designs, limited runs, rotating themes</li>
+                <li>Accessible pricing—stack consistently</li>
+                <li>Monthly discovery (for club members)</li>
+                <li>First access to new releases (club members only)</li>
+                <li>Flash sales & volume discounts</li>
+                <li>Beautiful presentation—for your vault or as a gift</li>
+            </ul>
+            
+            <p>No subscriptions you can't cancel. No hidden fees. Just handmade fractional silver, delivered with care.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>Why Fractional Makes Sense</h2>
+            
+            <p><strong>"Isn't fractional more expensive per ounce?"</strong></p>
+            
+            <p>Yes. Premiums are higher on smaller denominations. That's true industry-wide.</p>
+            
+            <p>But here's what that misses:</p>
+            
+            <p><strong>Accessibility beats perfection.</strong> Would you rather own zero ounces because the price felt like too much—or own real silver because it felt doable?</p>
+            
+            <p><strong>Variety has value.</strong> Owning different handmade designs is more interesting than identical rounds. Collectibility matters. Joy matters.</p>
+            
+            <p><strong>Fractional is flexible.</strong> Need a gift? Grab a gram. Want to test a design? Grab a gram. Scaling up? Grab 20.</p>
+            
+            <p><strong>Premiums shrink with volume.</strong> Flash sales and bulk discounts bring cost down significantly.</p>
+            
+            <p><strong>Bottom line:</strong> If you're optimizing purely for cost-per-ounce, traditional bullion wins. But if you're optimizing for <em>experience, variety, and consistent stacking habits</em>—fractional is unbeatable.</p>
+        </div>
+        
+        <div class="cta-section">
+            <h2 style="color: #e8e8e8; margin-bottom: 30px;">How to Get Started</h2>
+            
+            <a href="#collection" class="btn">Browse Collection</a>
+            <a href="#club" class="btn">Join Monthly Club</a>
+            <a href="#gift" class="btn">Send a Gram</a>
+        </div>
+        
+        <div class="content-section" style="text-align: center;">
+            <h2>The Bottom Line</h2>
+            
+            <p>Stacking silver should feel good. It should be something you <em>want</em> to do.</p>
+            
+            <p>Frac Stacker brings the joy back. Handmade designs. Accessible pricing. Consistent discovery. Real silver, real value, real craftsmanship.</p>
+            
+            <p>Whether you're a vault-holder looking for variety or a first-timer ready to start small—this is how modern silver stacking is done.</p>
+            
+            <p style="font-size: 1.3rem; color: #c0c0c0; margin-top: 30px;"><strong>One beautiful gram at a time.</strong></p>
         </div>
     </div>
     
     <footer>
         <p>&copy; 2026 Frac Stacker. All rights reserved.</p>
-        <p>1 Gram Silver Rounds | Fractional Silver Collectibles</p>
+        <p>Handmade Fractional Silver | Stack Different</p>
     </footer>
 </body>
 </html>
