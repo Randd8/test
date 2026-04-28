@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frac Stacker | Fractional Silver Collectibles</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+        }
+        
+        .banner {
+            background: #fff;
+            text-align: center;
+            border-bottom: 2px solid #c0c0c0;
+        }
+        
+        .banner img {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            max-height: 200px;
+        }
+        
+        header {
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #c0c0c0;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: #c0c0c0;
+            font-size: 1.1rem;
+        }
+        
+        nav {
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            text-align: center;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        nav a:hover {
+            background: rgba(192,192,192,0.2);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        .sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 992px) {
+            .sections {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .section-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid rgba(192,192,192,0.2);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            border-color: #c0c0c0;
+        }
+        
+        .section-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #c0c0c0;
+        }
+        
+        .section-card p {
+            color: #aaa;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+            color: #1a1a2e;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(192,192,192,0.3);
+        }
+        
+        footer {
+            background: rgba(0,0,0,0.3);
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            color: #888;
+        }
+        
+        .subscription-card {
+            background: linear-gradient(135deg, rgba(192,192,192,0.1), rgba(192,192,192,0.05));
+            border: 2px solid rgba(192,192,192,0.3);
+        }
+
+        .subscription-card h3 {
+            color: #e8e8e8;
+        }
+
+        .subscription-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+            color: #1a1a2e;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .sections {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <img src="FSbannerb.png" alt="Frac Stacker Logo">
+    </div>
+    
+    <header>
+        <p class="tagline">Premium 1 Gram Silver Rounds for Collectors & Gifts</p>
+    </header>
+    
+    <nav>
+        <a href="#collectors">For Collectors</a>
+        <a href="#gifts">Silver Grams</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <div class="container">
+        <section class="hero">
+            <h2>Stack Silver, One Gram at a Time</h2>
+            <p>Discover our collection of beautifully crafted 1 gram silver rounds. Perfect for collectors building their stack or as meaningful gifts that hold real value.</p>
+        </section>
+        
+        <div class="sections">
+            <div class="section-card" id="collectors">
+                <h3>Frac Stacker</h3>
+                <p>For the serious collector. Build your silver stack with premium fractional rounds. Each piece is crafted with precision and backed by pure silver content.</p>
+                <a href="#" class="btn">Browse Collection</a>
+            </div>
+            
+            <div class="section-card" id="gifts">
+                <h3>Silver Grams</h3>
+                <p>Send a gram of encouragement, appreciation, or affection. Our gift-ready silver rounds come with custom messaging and beautiful packaging.</p>
+                <a href="#" class="btn">Send a Gram</a>
+            </div>
+            
+            <div class="section-card subscription-card" id="subscription">
+                <span class="subscription-badge">Monthly</span>
+                <h3>Subscription Box</h3>
+                <p>Random selection of hand made fracs delivered monthly. When new items arrive you'll get them first.</p>
+                <a href="#" class="btn">Subscribe</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2026 Frac Stacker. All rights reserved.</p>
+        <p>1 Gram Silver Rounds | Fractional Silver Collectibles</p>
+    </footer>
+</body>
+</html>
