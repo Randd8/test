@@ -63,10 +63,107 @@
             background: rgba(192,192,192,0.2);
         }
         
-        .container {
+        /* Three Card Sections */
+        .sections-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 992px) {
+            .sections {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .section-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid rgba(192,192,192,0.2);
+            transition: transform 0.3s, border-color 0.3s;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            border-color: #c0c0c0;
+        }
+        
+        .section-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #c0c0c0;
+        }
+        
+        .section-card p {
+            color: #aaa;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .section-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        
+        .subscription-card {
+            background: linear-gradient(135deg, rgba(192,192,192,0.1), rgba(192,192,192,0.05));
+            border: 2px solid rgba(192,192,192,0.3);
+        }
+
+        .subscription-card h3 {
+            color: #e8e8e8;
+        }
+
+        .subscription-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+            color: #1a1a2e;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+            color: #1a1a2e;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(192,192,192,0.3);
+        }
+        
+        /* Long-form Copy Section */
+        .copy-container {
             max-width: 900px;
             margin: 0 auto;
             padding: 60px 20px;
+            background: rgba(0,0,0,0.2);
         }
         
         .hero {
@@ -137,22 +234,10 @@
             border: 2px solid rgba(192,192,192,0.2);
         }
         
-        .btn {
-            display: inline-block;
+        .cta-section .btn {
             padding: 15px 40px;
             margin: 10px;
-            background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
-            color: #1a1a2e;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 500;
             font-size: 1.1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(192,192,192,0.3);
         }
         
         footer {
@@ -177,6 +262,10 @@
                 margin: 10px auto;
                 max-width: 300px;
             }
+            
+            .sections {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -196,7 +285,41 @@
         <a href="#gift">Send a Gram</a>
     </nav>
     
-    <div class="container">
+    <!-- Three Card Sections - Top -->
+    <div class="sections-container">
+        <div class="sections">
+            <div class="section-card" id="collectors">
+                <!-- Image placeholder - you'll add image later -->
+                <div>
+                    <h3>Frac Stacker</h3>
+                    <p>For the serious collector. Build your silver stack with premium fractional rounds. Each piece is crafted with precision and backed by pure silver content.</p>
+                </div>
+                <a href="#collection" class="btn">Browse Collection</a>
+            </div>
+            
+            <div class="section-card" id="gifts">
+                <!-- Image placeholder - you'll add image later -->
+                <div>
+                    <h3>Silver Grams</h3>
+                    <p>Send a gram of encouragement, appreciation, or affection. Our gift-ready silver rounds come with custom messaging and beautiful packaging.</p>
+                </div>
+                <a href="#gift" class="btn">Send a Gram</a>
+            </div>
+            
+            <div class="section-card subscription-card" id="subscription">
+                <!-- Image placeholder - you'll add image later -->
+                <div>
+                    <span class="subscription-badge">Monthly</span>
+                    <h3>Subscription Box</h3>
+                    <p>Random selection of hand made fracs delivered monthly. When new items arrive you'll get them first.</p>
+                </div>
+                <a href="#club" class="btn">Subscribe</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Long-form Sales Copy -->
+    <div class="copy-container">
         <section class="hero">
             <h1>Stack Silver the Way It Was Meant to Be Stacked—One Beautiful Gram at a Time</h1>
         </section>
@@ -318,6 +441,39 @@
             <p>Whether you're a vault-holder looking for variety or a first-timer ready to start small—this is how modern silver stacking is done.</p>
             
             <p style="font-size: 1.3rem; color: #c0c0c0; margin-top: 30px;"><strong>One beautiful gram at a time.</strong></p>
+        </div>
+    </div>
+    
+    <!-- Three Card Sections - Bottom (Repeated) -->
+    <div class="sections-container">
+        <div class="sections">
+            <div class="section-card">
+                <!-- Image placeholder - you'll add image later -->
+                <div>
+                    <h3>Frac Stacker</h3>
+                    <p>For the serious collector. Build your silver stack with premium fractional rounds. Each piece is crafted with precision and backed by pure silver content.</p>
+                </div>
+                <a href="#collection" class="btn">Browse Collection</a>
+            </div>
+            
+            <div class="section-card">
+                <!-- Image placeholder - you'll add image later -->
+                <div>
+                    <h3>Silver Grams</h3>
+                    <p>Send a gram of encouragement, appreciation, or affection. Our gift-ready silver rounds come with custom messaging and beautiful packaging.</p>
+                </div>
+                <a href="#gift" class="btn">Send a Gram</a>
+            </div>
+            
+            <div class="section-card subscription-card">
+                <!-- Image placeholder - you'll add image later -->
+                <div>
+                    <span class="subscription-badge">Monthly</span>
+                    <h3>Subscription Box</h3>
+                    <p>Random selection of hand made fracs delivered monthly. When new items arrive you'll get them first.</p>
+                </div>
+                <a href="#club" class="btn">Subscribe</a>
+            </div>
         </div>
     </div>
     
