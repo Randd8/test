@@ -30,9 +30,9 @@
         /* 3-Tier Header */
         .utility-bar {
             background: #050d15;
-            color: #ffffff;
-            padding: 8px 0;
-            font-size: 13px;
+            color: #b0b0b0;
+            padding: 6px 0;
+            font-size: 12px;
             text-align: center;
         }
         
@@ -43,14 +43,14 @@
         
         .main-header {
             background: #1a2634;
-            padding: 20px 0;
+            padding: 12px 0;
             border-bottom: 1px solid #2a3a4a;
         }
         
         .main-header .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 12px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -59,29 +59,33 @@
         
         .logo {
             display: block;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
         
         .logo img {
             max-width: 100%;
             height: auto;
-            max-height: 120px;
+            max-height: 100px;
         }
         
         .search-bar {
             width: 100%;
             max-width: 600px;
-            margin: 0 auto 15px;
+            margin: 0 auto 10px;
         }
         
         .search-bar input {
             width: 100%;
-            padding: 12px 20px;
+            padding: 10px 18px;
             background: #0d1820;
             border: 1px solid #2a3a4a;
             border-radius: 4px;
             color: #ffffff;
             font-size: 14px;
+        }
+        
+        .search-bar input::placeholder {
+            color: #6b7280;
         }
         
         .header-actions {
@@ -92,15 +96,20 @@
         }
         
         .header-actions a {
-            color: #e0e0e0;
+            color: #9ca3af;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
+        }
+        
+        .header-actions a:hover {
+            color: #e0e0e0;
         }
         
         nav {
             background: #1a2634;
             border-bottom: 1px solid #2a3a4a;
-            padding: 15px 0;
+            border-top: 1px solid #333;
+            padding: 12px 0;
         }
         
         nav .container {
@@ -113,15 +122,15 @@
         }
         
         nav a {
-            color: #b0b0b0;
+            color: #9ca3af;
             text-decoration: none;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 500;
             transition: color 0.2s;
         }
         
         nav a:hover, nav a.active {
-            color: #5eb3d1;
+            color: #ffffff;
         }
         
         /* Container */
@@ -135,14 +144,14 @@
         .hero-banner {
             background: linear-gradient(90deg, #0a3d4a 0%, #1a5f7a 100%);
             border-radius: 10px;
-            padding: 80px 60px;
-            margin: 40px auto;
+            padding: 50px 40px;
+            margin: 25px auto;
             text-align: center;
         }
         
         .hero-banner h1 {
-            font-size: 56px;
-            margin-bottom: 20px;
+            font-size: 48px;
+            margin-bottom: 15px;
             line-height: 1.2;
         }
         
@@ -155,10 +164,10 @@
         }
         
         .hero-banner p {
-            font-size: 20px;
-            color: #b0e0d0;
+            font-size: 18px;
+            color: #9ca3af;
             max-width: 700px;
-            margin: 0 auto 30px;
+            margin: 0 auto 20px;
             line-height: 1.6;
         }
         
@@ -171,30 +180,30 @@
         /* Intro Section */
         .intro-section {
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 20px;
             max-width: 900px;
             margin: 0 auto;
         }
         
         .intro-section h2 {
-            font-size: 42px;
-            margin-bottom: 30px;
+            font-size: 36px;
+            margin-bottom: 20px;
             color: #5eb3d1;
         }
         
         .intro-section p {
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.8;
-            color: #d0d0d0;
-            margin-bottom: 20px;
+            color: #9ca3af;
+            margin-bottom: 16px;
         }
         
         /* Product Grid */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin: 60px auto;
+            gap: 25px;
+            margin: 40px auto;
         }
         
         .product-card {
@@ -260,20 +269,32 @@
         
         .btn {
             display: inline-block;
-            padding: 12px 30px;
+            padding: 10px 28px;
             background: #d0d0d0;
             color: #0a1929;
             text-decoration: none;
             border-radius: 25px;
             font-weight: 600;
             font-size: 14px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
         }
         
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 20px rgba(208, 208, 208, 0.4);
             background: #e0e0e0;
+        }
+        
+        .btn.secondary {
+            background: transparent;
+            border: 1px solid #6b7280;
+            color: #9ca3af;
+        }
+        
+        .btn.secondary:hover {
+            background: rgba(107, 114, 128, 0.1);
+            color: #d0d0d0;
+            border-color: #9ca3af;
         }
         
         /* Features Section */
@@ -407,7 +428,7 @@
             <h1><span class="bold">STACK SILVER</span> <span class="light">ONE GRAM AT A TIME</span></h1>
             <p>Premium handmade 1-gram silver rounds. Real silver. Real value. Real craftsmanship.</p>
             <a href="#collection" class="btn">Browse Collection</a>
-            <a href="#about" class="btn">Learn More</a>
+            <a href="#about" class="btn secondary">Learn More</a>
         </div>
     </div>
     
