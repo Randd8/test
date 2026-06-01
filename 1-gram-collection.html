@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Gram Collection | Frac Stacker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #0a1929 0%, #0d4858 50%, #1a5f7a 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        h1 { font-size: 2.7em; }
+        h2 { font-size: 2.1em; }
+        h3 { font-size: 1.15em; }
+
+        /* Announcement Bar */
+        .utility-bar {
+            background: #050d15;
+            color: #9ca3af;
+            padding: 12px 0;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .utility-bar a {
+            color: #5eb3d1;
+            text-decoration: none;
+        }
+
+        /* Main Header */
+        .main-header {
+            background: #ffffff;
+            padding: 0;
+        }
+
+        .logo-section {
+            text-align: center;
+            padding: 2px 0 2px 0;
+            background: #ffffff;
+        }
+
+        .logo-section img {
+            max-width: 98%;
+            height: auto;
+            max-height: 150px;
+        }
+
+        /* Search Bar Row */
+        .search-row {
+            background: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 15px 0;
+        }
+
+        .search-row .container-wide {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search-bar {
+            flex: 0 0 55%;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px 18px;
+            background: #f5f5f5;
+            border: 1px solid #d0d0d0;
+            border-radius: 4px;
+            color: #1a1a1a;
+            font-size: 14px;
+        }
+
+        .search-bar input::placeholder {
+            color: #999;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .header-actions a {
+            color: #0a1929;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .header-actions a:hover {
+            color: #5eb3d1;
+        }
+
+        /* Navigation */
+        nav {
+            background: #0a1929;
+            padding: 12px 0;
+        }
+
+        nav .container-wide {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            color: #5eb3d1;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(90deg, #0a3d4a 0%, #1a5f7a 100%);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: #d0d0d0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Product Grid */
+        .products-section {
+            padding: 60px 0;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-item {
+            background: #1a2634;
+            border: 1px solid #2a3a4a;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+            cursor: pointer;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+            border-color: #5eb3d1;
+        }
+
+        .product-item img {
+            width: 100%;
+            max-width: 180px;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            background: #0d1820;
+        }
+
+        .product-item h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .product-item .price {
+            font-size: 18px;
+            color: #5eb3d1;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background: #050d15;
+            text-align: center;
+            padding: 25px;
+            color: #6b7280;
+            font-size: 13px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 992px) {
+            .search-row .container-wide {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .search-bar {
+                flex: 1 1 100%;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Utility Bar -->
+    <div class="utility-bar">
+        🚛 Free Shipping On Orders Over $99! | <a href="tel:800-555-GRAM">Call Us: 800-555-GRAM</a>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header">
+        <div class="logo-section">
+            <a href="index.html"><img src="FSbannerb.png" alt="Frac Stacker"></a>
+        </div>
+
+        <!-- Search Bar Row -->
+        <div class="search-row">
+            <div class="container-wide">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for fractional silver rounds...">
+                </div>
+                <div class="header-actions">
+                    <a href="#">Sign In</a>
+                    <a href="#">Cart (0)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container-wide">
+            <a href="index.html">Home</a>
+            <a href="collections.html" class="active">Collection</a>
+            <a href="#deals">Deals</a>
+            <a href="#club">Monthly Club</a>
+            <a href="#gift">Send a Gram</a>
+            <a href="index.html#about">About</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>1 Gram Collection</h1>
+            <p>Over 40 designs and sets to choose from with more on the way. Roughly 3/8" diameter X 1/16" thick (9.5 mm X 1.5 mm)</p>
+        </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="container">
+        <div class="products-section">
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="images/1gram/2Agram.jpg" alt="2A Gram">
+                    <h3>2A Gram</h3>
+                    <div class="price">$6.50</div>
+                </div>
+                <div class="product-item">
+                    <img src="images/1gram/Ace-o-spadesgram.jpg" alt="Ace o Spades Gram">
+                    <h3>Ace o Spades Gram</h3>
+                    <div class="price">$6.50</div>
+                </div>
+                <div class="product-item">
+                    <img src="images/1gram/Anarchygram.jpg" alt="Anarchy Gram">
+                    <h3>Anarchy Gram</h3>
+                    <div class="price">$6.50</div>
+                </div>
+                <div class="product-item">
+                    <img src="images/1gram/Angelgram.jpg" alt="Angel Gram">
+                    <h3>Angel Gram</h3>
+                    <div class="price">$6.50</div>
+                </div>
+                <div class="product-item">
+                    <img src="images/1gram/Bitcoingram.jpg" alt="Bitcoin Gram">
+                    <h3>Bitcoin Gram</h3>
+                    <div class="price">$6.50</div>
+                </div>
+                <div class="product-item">
+                    <img src="images/1gram/Cardanogram.jpg" alt="Cardano Gram">
+                    <h3>Cardano Gram</h3>
+                    <div class="price">$6.50</div>
+                </div>
+                <div class="product-item">
+                    <img src="images/1gram/CurioBullion.jpg" alt="CurioBullion Gram">
+                    <h3>CurioBullion Gram</h3>
+                    <div class="price">$6.50</div>
+                </div>
+                <div class="product-item">
+                    <img src="images/1gram/XRPgram.jpg" alt="XRP Gram">
+                    <h3>XRP Gram</h3>
+                    <div class="price">$6.50</div>
+                </div>
+                <div class="product-item">
+                    <img src="images/1gram/batgram.jpg" alt="Bat Gram">
+                    <h3>Bat Gram</h3>
+                    <div class="price">$6.50</div>
+                </div>
+                <div class="product-item">
+                    <img src="images/1gram/beegram.jpg" alt="Bee Gram">
+                    <h3>Bee Gram</h3>
+                    <div class="price">$6.50</div>
+                </div>
+                <div class="product-item">
+                    <img src="images/1gram/beertoken.jpg" alt="Beer Token">
+                    <h3>Beer Token</h3>
+                    <div class="price">$6.50</div>
+                </div>
+                <div class="product-item">
+                    <img src="images/1gram/dogegram.jpg" alt="Doge Gram">
+                    <h3>Doge Gram</h3>
+                    <div class="price">$6.50</div>
+                </div>
+                <div class="product-item">
+                    <img src="images/1gram/dollargram.jpg" alt="Dollar Gram">
+                    <h3>Dollar Gram</h3>
+                    <div class="price">$6.50</div>
+                </div>
+                <div class="product-item">
+                    <img src="images/1gram/weedgram.jpg" alt="Weed Gram">
+                    <h3>Weed Gram</h3>
+                    <div class="price">$6.50</div>
+                </div>
+                <div class="product-item">
+                    <img src="images/1gram/zcashgram.jpg" alt="Zcash Gram">
+                    <h3>Zcash Gram</h3>
+                    <div class="price">$6.50</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Frac Stacker. All rights reserved. | <a href="collections.html" style="color: #5eb3d1; text-decoration: none;">Back to Collections</a></p>
+    </footer>
+</body>
+</html>
