@@ -8,274 +8,60 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, #0a1929 0%, #0d4858 50%, #1a5f7a 100%);
-            color: #e0e0e0;
-            min-height: 100vh;
-            font-size: 18px;
-            line-height: 1.7;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            color: #ffffff;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background: linear-gradient(135deg, #0a1929 0%, #0d4858 50%, #1a5f7a 100%); color: #e0e0e0; min-height: 100vh; font-size: 18px; line-height: 1.7; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; color: #ffffff; }
         h1 { font-size: 2.7em; }
         h2 { font-size: 2.1em; }
         h3 { font-size: 1.15em; }
-
-        /* Announcement Bar */
-        .utility-bar {
-            background: #050d15;
-            color: #9ca3af;
-            padding: 12px 0;
-            font-size: 15px;
-            text-align: center;
-        }
-
-        .utility-bar a {
-            color: #5eb3d1;
-            text-decoration: none;
-        }
-
-        /* Main Header */
-        .main-header {
-            background: #ffffff;
-            padding: 0;
-        }
-
-        .logo-section {
-            text-align: center;
-            padding: 2px 0 2px 0;
-            background: #ffffff;
-        }
-
-        .logo-section img {
-            max-width: 98%;
-            height: auto;
-            max-height: 150px;
-        }
-
-        /* Search Bar Row */
-        .search-row {
-            background: #ffffff;
-            border-bottom: 1px solid #e0e0e0;
-            padding: 15px 0;
-        }
-
-        .search-row .container-wide {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .search-bar {
-            flex: 0 0 55%;
-        }
-
-        .search-bar input {
-            width: 100%;
-            padding: 10px 18px;
-            background: #f5f5f5;
-            border: 1px solid #d0d0d0;
-            border-radius: 4px;
-            color: #1a1a1a;
-            font-size: 14px;
-        }
-
-        .search-bar input::placeholder {
-            color: #999;
-        }
-
-        .header-actions {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .header-actions a {
-            color: #0a1929;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
-        }
-
-        .header-actions a:hover {
-            color: #5eb3d1;
-        }
-
-        /* Navigation */
-        nav {
-            background: #0a1929;
-            padding: 12px 0;
-        }
-
-        nav .container-wide {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: center;
-            gap: 35px;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        nav a:hover, nav a.active {
-            color: #5eb3d1;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        /* Page Header */
-        .page-header {
-            background: linear-gradient(90deg, #0a3d4a 0%, #1a5f7a 100%);
-            padding: 50px 0;
-            text-align: center;
-        }
-
-        .page-header h1 {
-            font-size: 42px;
-            margin-bottom: 12px;
-        }
-
-        .page-header p {
-            font-size: 16px;
-            color: #d0d0d0;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Product Grid */
-        .products-section {
-            padding: 60px 0;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .product-item {
-            background: #1a2634;
-            border: 1px solid #2a3a4a;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s, border-color 0.3s;
-            cursor: pointer;
-        }
-
-        .product-item:hover {
-            transform: translateY(-5px);
-            border-color: #5eb3d1;
-        }
-
-        .product-item img {
-            width: 100%;
-            max-width: 180px;
-            height: auto;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            background: #0d1820;
-        }
-
-        .product-item h3 {
-            font-size: 16px;
-            margin-bottom: 8px;
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        .product-item .price {
-            font-size: 18px;
-            color: #5eb3d1;
-            font-weight: 700;
-        }
-
-        /* Footer */
-        footer {
-            background: #050d15;
-            text-align: center;
-            padding: 25px;
-            color: #6b7280;
-            font-size: 13px;
-            margin-top: 60px;
-        }
-
+        .utility-bar { background: #050d15; color: #9ca3af; padding: 12px 0; font-size: 15px; text-align: center; }
+        .utility-bar a { color: #5eb3d1; text-decoration: none; }
+        .main-header { background: #ffffff; padding: 0; }
+        .logo-section { text-align: center; padding: 2px 0 2px 0; background: #ffffff; }
+        .logo-section img { max-width: 98%; height: auto; max-height: 150px; }
+        .search-row { background: #ffffff; border-bottom: 1px solid #e0e0e0; padding: 15px 0; }
+        .search-row .container-wide { max-width: 1200px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; }
+        .search-bar { flex: 0 0 55%; }
+        .search-bar input { width: 100%; padding: 10px 18px; background: #f5f5f5; border: 1px solid #d0d0d0; border-radius: 4px; color: #1a1a1a; font-size: 14px; }
+        .search-bar input::placeholder { color: #999; }
+        .header-actions { display: flex; gap: 25px; align-items: center; }
+        .header-actions a { color: #0a1929; text-decoration: none; font-size: 13px; font-weight: 500; }
+        .header-actions a:hover { color: #5eb3d1; }
+        nav { background: #0a1929; padding: 12px 0; }
+        nav .container-wide { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: center; gap: 35px; }
+        nav a { color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+        nav a:hover, nav a.active { color: #5eb3d1; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+        .page-header { background: linear-gradient(90deg, #0a3d4a 0%, #1a5f7a 100%); padding: 50px 0; text-align: center; }
+        .page-header h1 { font-size: 42px; margin-bottom: 12px; }
+        .page-header p { font-size: 16px; color: #d0d0d0; max-width: 700px; margin: 0 auto; }
+        .products-section { padding: 60px 0; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 30px; margin-top: 40px; }
+        .product-item { background: #1a2634; border: 1px solid #2a3a4a; border-radius: 8px; padding: 20px; text-align: center; transition: transform 0.3s, border-color 0.3s; cursor: pointer; }
+        .product-item:hover { transform: translateY(-5px); border-color: #5eb3d1; }
+        .product-item img { width: 100%; max-width: 180px; height: auto; border-radius: 6px; margin-bottom: 15px; background: #0d1820; }
+        .product-item h3 { font-size: 16px; margin-bottom: 8px; color: #ffffff; font-weight: 600; }
+        .product-item .price { font-size: 18px; color: #5eb3d1; font-weight: 700; }
+        footer { background: #050d15; text-align: center; padding: 25px; color: #6b7280; font-size: 13px; margin-top: 60px; }
         @media (max-width: 992px) {
-            .search-row .container-wide {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .search-bar {
-                flex: 1 1 100%;
-            }
-
-            .page-header h1 {
-                font-size: 32px;
-            }
-
-            .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 20px;
-            }
+            .search-row .container-wide { flex-direction: column; gap: 15px; }
+            .search-bar { flex: 1 1 100%; }
+            .page-header h1 { font-size: 32px; }
+            .product-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; }
         }
     </style>
 </head>
 <body>
-    <!-- Utility Bar -->
-    <div class="utility-bar">
-        🚛 Free Shipping On Orders Over $99! | <a href="tel:800-555-GRAM">Call Us: 800-555-GRAM</a>
-    </div>
-
-    <!-- Main Header -->
+    <div class="utility-bar">🚛 Free Shipping On Orders Over $99! | <a href="tel:800-555-GRAM">Call Us: 800-555-GRAM</a></div>
     <div class="main-header">
-        <div class="logo-section">
-            <a href="index.html"><img src="FSbannerb.png" alt="Frac Stacker"></a>
-        </div>
-
-        <!-- Search Bar Row -->
+        <div class="logo-section"><a href="index.html"><img src="FSbannerb.png" alt="Frac Stacker"></a></div>
         <div class="search-row">
             <div class="container-wide">
-                <div class="search-bar">
-                    <input type="text" placeholder="Search for fractional silver rounds...">
-                </div>
-                <div class="header-actions">
-                    <a href="#">Sign In</a>
-                    <a href="#">Cart (0)</a>
-                </div>
+                <div class="search-bar"><input type="text" placeholder="Search for fractional silver rounds..."></div>
+                <div class="header-actions"><a href="#">Sign In</a><a href="#">Cart (0)</a></div>
             </div>
         </div>
     </div>
-
-    <!-- Navigation -->
     <nav>
         <div class="container-wide">
             <a href="index.html">Home</a>
@@ -286,441 +72,18 @@
             <a href="index.html#about">About</a>
         </div>
     </nav>
-
-    <!-- Page Header -->
     <div class="page-header">
         <div class="container">
             <h1>1 Gram Collection</h1>
             <p>Over 40 designs and sets to choose from with more on the way. Roughly 3/8" diameter X 1/16" thick (9.5 mm X 1.5 mm)</p>
         </div>
     </div>
-
-    <!-- Products Grid -->
     <div class="container">
         <div class="products-section">
             <div class="product-grid">
-                <div class="product-item">
-                    <img src="images/1gram/2Agram.jpg" alt="2a Gram">
-                    <h3>2a Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/Ace-o-spadesgram.jpg" alt="Ace o Spades Gram">
-                    <h3>Ace o Spades Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/Anarchygram.jpg" alt="Anarchy Gram">
-                    <h3>Anarchy Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/Angelgram.jpg" alt="Angel Gram">
-                    <h3>Angel Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/Bitcoingram.jpg" alt="Bitcoin Gram">
-                    <h3>Bitcoin Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/Cardanogram.jpg" alt="Cardano Gram">
-                    <h3>Cardano Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/CurioBullion.jpg" alt="Curiobullion Gram">
-                    <h3>Curiobullion Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/Home_img.jpg" alt="Home Img Gram">
-                    <h3>Home Img Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/TSGlogo.jpg" alt="Tsglogo Gram">
-                    <h3>Tsglogo Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/XRPgram.jpg" alt="Xrp Gram">
-                    <h3>Xrp Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/batgram.jpg" alt="Bat Gram">
-                    <h3>Bat Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/beegram.jpg" alt="Bee Gram">
-                    <h3>Bee Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/beertoken.jpg" alt="Beer Token">
-                    <h3>Beer Token</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/dogegram.jpg" alt="Doge Gram">
-                    <h3>Doge Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/dollargram.jpg" alt="Dollar Gram">
-                    <h3>Dollar Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_120.jpg" alt="File 120 Gram">
-                    <h3>File 120 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_121.jpg" alt="File 121 Gram">
-                    <h3>File 121 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_122.jpg" alt="File 122 Gram">
-                    <h3>File 122 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_123.jpg" alt="File 123 Gram">
-                    <h3>File 123 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_124.jpg" alt="File 124 Gram">
-                    <h3>File 124 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_128.jpg" alt="File 128 Gram">
-                    <h3>File 128 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_129.jpg" alt="File 129 Gram">
-                    <h3>File 129 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_130.jpg" alt="File 130 Gram">
-                    <h3>File 130 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_131.jpg" alt="File 131 Gram">
-                    <h3>File 131 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_132.jpg" alt="File 132 Gram">
-                    <h3>File 132 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_133.jpg" alt="File 133 Gram">
-                    <h3>File 133 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_134.jpg" alt="File 134 Gram">
-                    <h3>File 134 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_135.jpg" alt="File 135 Gram">
-                    <h3>File 135 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_136.jpg" alt="File 136 Gram">
-                    <h3>File 136 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_137.jpg" alt="File 137 Gram">
-                    <h3>File 137 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_138.jpg" alt="File 138 Gram">
-                    <h3>File 138 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_139.jpg" alt="File 139 Gram">
-                    <h3>File 139 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_141.jpg" alt="File 141 Gram">
-                    <h3>File 141 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_142.jpg" alt="File 142 Gram">
-                    <h3>File 142 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_143.jpg" alt="File 143 Gram">
-                    <h3>File 143 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_144.jpg" alt="File 144 Gram">
-                    <h3>File 144 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_145.jpg" alt="File 145 Gram">
-                    <h3>File 145 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_146.jpg" alt="File 146 Gram">
-                    <h3>File 146 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_147.jpg" alt="File 147 Gram">
-                    <h3>File 147 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_27.jpg" alt="File 27 Gram">
-                    <h3>File 27 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_28.jpg" alt="File 28 Gram">
-                    <h3>File 28 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_29.jpg" alt="File 29 Gram">
-                    <h3>File 29 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_30.jpg" alt="File 30 Gram">
-                    <h3>File 30 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_35.jpg" alt="File 35 Gram">
-                    <h3>File 35 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_36.jpg" alt="File 36 Gram">
-                    <h3>File 36 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_37.jpg" alt="File 37 Gram">
-                    <h3>File 37 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_38.jpg" alt="File 38 Gram">
-                    <h3>File 38 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_39.jpg" alt="File 39 Gram">
-                    <h3>File 39 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_40.jpg" alt="File 40 Gram">
-                    <h3>File 40 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_41.jpg" alt="File 41 Gram">
-                    <h3>File 41 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_42.jpg" alt="File 42 Gram">
-                    <h3>File 42 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_43.jpg" alt="File 43 Gram">
-                    <h3>File 43 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_44.jpg" alt="File 44 Gram">
-                    <h3>File 44 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_45.jpg" alt="File 45 Gram">
-                    <h3>File 45 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_46.jpg" alt="File 46 Gram">
-                    <h3>File 46 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_47.jpg" alt="File 47 Gram">
-                    <h3>File 47 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_48.jpg" alt="File 48 Gram">
-                    <h3>File 48 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_49.jpg" alt="File 49 Gram">
-                    <h3>File 49 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_50.jpg" alt="File 50 Gram">
-                    <h3>File 50 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_51.jpg" alt="File 51 Gram">
-                    <h3>File 51 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_52.jpg" alt="File 52 Gram">
-                    <h3>File 52 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_55.jpg" alt="File 55 Gram">
-                    <h3>File 55 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_56.jpg" alt="File 56 Gram">
-                    <h3>File 56 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_57.jpg" alt="File 57 Gram">
-                    <h3>File 57 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_58.jpg" alt="File 58 Gram">
-                    <h3>File 58 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_59.jpg" alt="File 59 Gram">
-                    <h3>File 59 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_60.jpg" alt="File 60 Gram">
-                    <h3>File 60 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_61.jpg" alt="File 61 Gram">
-                    <h3>File 61 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_62.jpg" alt="File 62 Gram">
-                    <h3>File 62 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_66.jpg" alt="File 66 Gram">
-                    <h3>File 66 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_67.jpg" alt="File 67 Gram">
-                    <h3>File 67 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_68.jpg" alt="File 68 Gram">
-                    <h3>File 68 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_73.jpg" alt="File 73 Gram">
-                    <h3>File 73 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_74.jpg" alt="File 74 Gram">
-                    <h3>File 74 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_92.jpg" alt="File 92 Gram">
-                    <h3>File 92 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/file_94.jpg" alt="File 94 Gram">
-                    <h3>File 94 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/garden1.jpg" alt="Garden1 Gram">
-                    <h3>Garden1 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/garden2.jpg" alt="Garden2 Gram">
-                    <h3>Garden2 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/garden3.jpg" alt="Garden3 Gram">
-                    <h3>Garden3 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/garden4.jpg" alt="Garden4 Gram">
-                    <h3>Garden4 Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/home_sample.jpg" alt="Home Sample Gram">
-                    <h3>Home Sample Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/weedgram.jpg" alt="Weed Gram">
-                    <h3>Weed Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
-                <div class="product-item">
-                    <img src="images/1gram/zcashgram.jpg" alt="Zcash Gram">
-                    <h3>Zcash Gram</h3>
-                    <div class="price">$6.50</div>
-                </div>
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Frac Stacker. All rights reserved. | <a href="collections.html" style="color: #5eb3d1; text-decoration: none;">Back to Collections</a></p>
-    </footer>
+    <footer><p>&copy; 2026 Frac Stacker. All rights reserved. | <a href="collections.html" style="color: #5eb3d1; text-decoration: none;">Back to Collections</a></p></footer>
 </body>
 </html>
