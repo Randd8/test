@@ -207,6 +207,24 @@
             display: block;
         }
 
+        .collection-img-container {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 8px;
+            margin: 0 0 20px 0;
+        }
+
+        .collection-img-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .collection-card:hover .collection-img-container img {
+            transform: scale(1.25);
+        }
+
         .collection-icon {
             width: 80px;
             height: 80px;
@@ -382,7 +400,7 @@
             <div class="collection-grid">
                 <!-- 1 Gram Collection -->
                 <a href="1-gram-collection.html" class="collection-card">
-                    <img src="images/grams_header.jpg" alt="1 Gram Collection" class="collection-header-img">
+                    <div class="collection-img-container"><img src="images/grams_header.jpg" alt="1 Gram Collection"></div>
                     <h3>One Gram Collection</h3>
                     <p>One gram rounds, over 40 designs and sets to choose from.<br>Roughly 3/8" diameter X 1/16" thick (9.5 mm X 1.5 mm)</p>
                     <span class="btn primary">View Collection</span>
@@ -390,7 +408,7 @@
 
                 <!-- 1 Gram Other -->
                 <a href="#one-gram-other" class="collection-card">
-                    <img src="images/1g_header.jpg" alt="1 Gram Other" class="collection-header-img">
+                    <div class="collection-img-container"><img src="images/1g_header.jpg" alt="1 Gram Other"></div>
                     <h3>1 Gram, Other</h3>
                     <p>Unique one gram designs outside our uniform 1g collection<br>We love experimenting! Here you'll find our other 1g goods.</p>
                     <span class="btn primary">View Collection</span>
@@ -398,7 +416,7 @@
 
                 <!-- 5 Gram Pieces -->
                 <a href="#five-gram" class="collection-card">
-                    <img src="images/5g_header.jpg" alt="5 Gram Pieces" class="collection-header-img">
+                    <div class="collection-img-container"><img src="images/5g_header.jpg" alt="5 Gram Pieces"></div>
                     <h3>5 Gram Pieces</h3>
                     <p>More unique styling and handmade appeal, 5 grams at a time.<br>Check back often to be sure to catch any newly added items.</p>
                     <span class="btn primary">View Collection</span>
@@ -406,7 +424,7 @@
 
                 <!-- 1/10th Ounce -->
                 <a href="#tenth-ounce" class="collection-card">
-                    <img src="images/soon_header2.jpg" alt="1/10 Ounce - Coming Soon" class="collection-header-img">
+                    <div class="collection-img-container"><img src="images/soon_header2.jpg" alt="1/10 Ounce - Coming Soon"></div>
                     <h3>1/10 Ounce</h3>
                     <p>A more traditional weight of 3.11 grams per item.</p>
                     <span class="btn primary">View Collection</span>
