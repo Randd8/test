@@ -42,6 +42,11 @@
         .product-item .img-container { width: 100%; max-width: 280px; height: 280px; margin: 0 auto 15px; overflow: hidden; border-radius: 6px; background: #0d1820; position: relative; }
         .product-item img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; transition: transform 0.3s ease; }
         .product-item:hover img { transform: scale(1.15); }
+        .img-container { position: relative; }
+        .img-container img.main-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease; }
+        .img-container img.hover-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.3s ease; }
+        .product-item:hover .img-container img.main-img { opacity: 0; }
+        .product-item:hover .img-container img.hover-img { opacity: 1; transform: scale(1.15); }
         .product-item h3 { font-size: 16px; margin-bottom: 8px; color: #ffffff; font-weight: 600; }
         .product-item .price { font-size: 18px; color: #5eb3d1; font-weight: 700; margin-bottom: 10px; }
         .add-to-cart { background: #d0d0d0; color: #333333; border: none; padding: 10px 20px; border-radius: 20px; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s; width: auto; }
@@ -88,31 +93,46 @@
             <h2 class="section-title">5g Rounds</h2>
             <div class="product-grid">
                 <div class="product-item">
-                    <div class="img-container"><img src="images/5gram/5g-lion.jpg" alt="5g Lion"></div>
+                    <div class="img-container">
+                        <img src="images/5gram/5g-lion.jpg" alt="5g Lion" class="main-img">
+                        <img src="images/5gram/5g-lion-hover.jpg" alt="5g Lion reverse" class="hover-img">
+                    </div>
                     <h3>5g Lion</h3>
                     <div class="price">$23.95</div>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
                 <div class="product-item">
-                    <div class="img-container"><img src="images/5gram/5g-exchange.jpg" alt="5g Exchange"></div>
+                    <div class="img-container">
+                        <img src="images/5gram/5g-exchange.jpg" alt="5g Natures Money" class="main-img">
+                        <img src="images/5gram/5g-natures-money-hover.jpg" alt="5g Natures Money reverse" class="hover-img">
+                    </div>
                     <h3>5g Natures Money</h3>
                     <div class="price">$23.95</div>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
                 <div class="product-item">
-                    <div class="img-container"><img src="images/5gram/5g-lizard.jpg" alt="5g Lizard"></div>
+                    <div class="img-container">
+                        <img src="images/5gram/5g-lizard.jpg" alt="5g Lizard" class="main-img">
+                        <img src="images/5gram/5g-lizard-hover.jpg" alt="5g Lizard reverse" class="hover-img">
+                    </div>
                     <h3>5g Lizard</h3>
                     <div class="price">$23.95</div>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
                 <div class="product-item">
-                    <div class="img-container"><img src="images/5gram/5g-phoenix.jpg" alt="5g Phoenix"></div>
+                    <div class="img-container">
+                        <img src="images/5gram/5g-phoenix.jpg" alt="5g Phoenix" class="main-img">
+                        <img src="images/5gram/5g-phoenix-hover.jpg" alt="5g Phoenix reverse" class="hover-img">
+                    </div>
                     <h3>5g Phoenix</h3>
                     <div class="price">$23.95</div>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
                 <div class="product-item">
-                    <div class="img-container"><img src="images/5gram/5g-sun.jpg" alt="5g Sun"></div>
+                    <div class="img-container">
+                        <img src="images/5gram/5g-sun.jpg" alt="5g Sun" class="main-img">
+                        <img src="images/5gram/5g-sun-hover.jpg" alt="5g Sun reverse" class="hover-img">
+                    </div>
                     <h3>5g Sun</h3>
                     <div class="price">$23.95</div>
                     <button class="add-to-cart">Add to Cart</button>
