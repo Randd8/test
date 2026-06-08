@@ -264,15 +264,19 @@ h3 { font-size: 1.35em; }
  flex-direction: column;
  }
 
+ .product-card-inner {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ }
+
  .product-card:hover {
  transform: translateY(-5px);
  border-color: #5eb3d1;
  }
 
  .product-badge {
- position: absolute;
- top: 15px;
- left: 15px;
+ display: inline-block;
  background: #1a5f7a;
  color: #ffffff;
  padding: 5px 12px;
@@ -280,6 +284,7 @@ h3 { font-size: 1.35em; }
  font-size: 10px;
  font-weight: 600;
  text-transform: uppercase;
+ margin-bottom: 10px;
  }
 
  .product-badge.subscription {
@@ -481,6 +486,7 @@ h3 { font-size: 1.35em; }
  <div class="container">
  <div class="product-grid">
  <div class="product-card">
+ <div class="product-card-inner">
  <span class="product-badge">Collection</span>
  <div class="product-image">
  <img src="images/fracstacker.jpg" alt="Frac Stacker Collection">
@@ -489,8 +495,10 @@ h3 { font-size: 1.35em; }
  <p>For the serious collector. Build your silver stack with premium fractional silver. Each piece is carefully crafted, most stamped or cast by hand and of course backed by pure silver content.</p>
  <a href="collections.html" class="btn primary">Browse Collection</a>
  </div>
+ </div>
 
  <div class="product-card">
+ <div class="product-card-inner">
  <span class="product-badge">GIFT - COMING SOON</span>
  <div class="product-image">
  <img src="images/silvergrams.jpg" alt="Silver Grams Gift">
@@ -499,8 +507,10 @@ h3 { font-size: 1.35em; }
  <p>Send a gram of encouragement, appreciation, affection or invitations (containing a gram of silver). Our gift-ready silver grams come encapsulated in a thoughtful card of your choosing.</p>
  <a href="#gift" class="btn primary">Send a Gram</a>
  </div>
+ </div>
 
  <div class="product-card">
+ <div class="product-card-inner">
  <span class="product-badge subscription">MONTHLY - COMING SOON</span>
  <div class="product-image">
  <img src="images/subscription.jpg" alt="Subscription Box">
@@ -508,6 +518,7 @@ h3 { font-size: 1.35em; }
  <h3>Subscription Box</h3>
  <p>We understand you get busy, grow the stack automatically with a beautifully curated collection of fractional silver items delivered monthly. As new items arrive, you'll be among the first to get them along with specialty items reserved for subscribers.</p>
  <a href="#club" class="btn primary">Subscribe Now</a>
+ </div>
  </div>
  </div>
  </div>
