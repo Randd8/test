@@ -44,6 +44,28 @@
         .product-item .price { font-size: 18px; color: #5eb3d1; font-weight: 700; margin-bottom: 10px; }
         .add-to-cart { background: #d0d0d0; color: #333333; border: none; padding: 10px 20px; border-radius: 20px; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s; width: auto; }
         .add-to-cart:hover { background: #c0c0c0; }
+        .img-container { cursor: pointer; }
+        .img-container.show-hint::after {
+            content: "Click again to add to cart";
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.85);
+            color: #fff;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+            z-index: 10;
+            pointer-events: none;
+            animation: fadeIn 0.2s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(-50%) translateY(5px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
         footer { background: #050d15; text-align: center; padding: 25px; color: #6b7280; font-size: 13px; margin-top: 60px; }
         @media (max-width: 992px) {
             .search-row .container-wide { flex-direction: column; gap: 15px; }
@@ -331,5 +353,26 @@
                 </div>
             </div></div></div>
     <footer><p>&copy; 2026 Frac Stacker. All rights reserved. | <a href="collections.html" style="color: #5eb3d1; text-decoration: none;">Back to Collections</a></p></footer>
+    <script>
+        document.querySelectorAll('.img-container').forEach(container => {
+            container.addEventListener('click', function(e) {
+                if (e.target.closest('.add-to-cart')) return;
+                document.querySelectorAll('.img-container').forEach(c => {
+                    if (c !== this) c.classList.remove('show-hint');
+                });
+                this.classList.toggle('show-hint');
+                setTimeout(() => {
+                    this.classList.remove('show-hint');
+                }, 3000);
+            });
+        });
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.img-container')) {
+                document.querySelectorAll('.img-container').forEach(c => {
+                    c.classList.remove('show-hint');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
