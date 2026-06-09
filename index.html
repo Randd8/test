@@ -73,57 +73,6 @@ h3 { font-size: 1.35em; }
  }
  }
 
- /* Search Bar Row */
- .search-row {
- background: #ffffff;
- border-bottom: 1px solid #e0e0e0;
- padding: 15px 0;
- }
-
- .search-row .container {
- max-width: 1200px;
- margin: 0 auto;
- padding: 0 40px;
- display: flex;
- align-items: center;
- justify-content: space-between;
- }
-
- .search-bar {
- flex: 0 0 55%;
- }
-
- .search-bar input {
- width: 100%;
- padding: 10px 18px;
- background: #f5f5f5;
- border: 1px solid #d0d0d0;
- border-radius: 4px;
- color: #1a1a1a;
- font-size: 14px;
- }
-
- .search-bar input::placeholder {
- color: #999;
- }
-
- .header-actions {
- display: flex;
- gap: 25px;
- align-items: center;
- }
-
- .header-actions a {
- color: #0a1929;
- text-decoration: none;
- font-size: 13px;
- font-weight: 500;
- }
-
- .header-actions a:hover {
- color: #5eb3d1;
- }
-
  /* Navigation */
  nav {
  background: #081828;
@@ -399,15 +348,6 @@ h3 { font-size: 1.35em; }
  }
 
  @media (max-width: 992px) {
- .search-row .container {
- flex-direction: column;
- gap: 15px;
- }
-
- .search-bar {
- flex: 1 1 100%;
- }
-
  .product-grid {
  grid-template-columns: 1fr;
  }
@@ -441,19 +381,6 @@ h3 { font-size: 1.35em; }
  <div class="logo-section">
  <img src="FSbannerb.png" alt="Frac Stacker">
  </div>
-
- <!-- Search Bar Row -->
- <div class="search-row">
- <div class="container">
- <div class="search-bar">
- <input type="text" placeholder="Search for fractional silver rounds...">
- </div>
- <div class="header-actions">
- <a href="#">Sign In</a>
- <a href="#">Cart (0)</a>
- </div>
- </div>
- </div>
  </div>
 
  <!-- Navigation -->
@@ -465,6 +392,8 @@ h3 { font-size: 1.35em; }
  <a href="#club">Monthly Club</a>
  <a href="#gift">Send a Gram</a>
  <a href="#about">About</a>
+ <a href="#">Sign In</a>
+ <a href="#">Cart (0)</a>
  </div>
  </nav>
 
