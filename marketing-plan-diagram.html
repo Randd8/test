@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Marketing Plan Architecture - Business Success Framework</title>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Inter', sans-serif;
+ background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+ color: #e2e8f0;
+ min-height: 100vh;
+ padding: 40px 20px;
+ }
+
+ .container {
+ max-width: 1400px;
+ margin: 0 auto;
+ }
+
+ h1 {
+ text-align: center;
+ font-size: 2.5em;
+ font-weight: 700;
+ margin-bottom: 10px;
+ background: linear-gradient(90deg, #60a5fa, #a78bfa);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ }
+
+ .subtitle {
+ text-align: center;
+ color: #94a3b8;
+ font-size: 1.1em;
+ margin-bottom: 50px;
+ }
+
+ /* Flow Diagram */
+ .flow-container {
+ display: flex;
+ flex-direction: column;
+ gap: 30px;
+ position: relative;
+ }
+
+ /* Connecting Line */
+ .flow-container::before {
+ content: '';
+ position: absolute;
+ left: 50%;
+ top: 80px;
+ bottom: 80px;
+ width: 4px;
+ background: linear-gradient(180deg, #60a5fa, #a78bfa, #f472b6, #fbbf24);
+ transform: translateX(-50%);
+ z-index: 0;
+ }
+
+ /* Phase Container */
+ .phase {
+ display: flex;
+ align-items: stretch;
+ gap: 30px;
+ position: relative;
+ z-index: 1;
+ }
+
+ .phase:nth-child(even) {
+ flex-direction: row-reverse;
+ }
+
+ /* Phase Number Badge */
+ .phase-badge {
+ position: absolute;
+ left: 50%;
+ top: 50%;
+ transform: translate(-50%, -50%);
+ width: 60px;
+ height: 60px;
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 1.5em;
+ font-weight: 700;
+ color: #0f172a;
+ z-index: 2;
+ box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+ }
+
+ .phase:nth-child(1) .phase-badge { background: #60a5fa; }
+ .phase:nth-child(2) .phase-badge { background: #34d399; }
+ .phase:nth-child(3) .phase-badge { background: #a78bfa; }
+ .phase:nth-child(4) .phase-badge { background: #f472b6; }
+ .phase:nth-child(5) .phase-badge { background: #fbbf24; }
+ .phase:nth-child(6) .phase-badge { background: #fb923c; }
+ .phase:nth-child(7) .phase-badge { background: #f87171; }
+
+ /* Phase Content Box */
+ .phase-content {
+ flex: 1;
+ background: rgba(30, 41, 59, 0.8);
+ border: 1px solid rgba(148, 163, 184, 0.2);
+ border-radius: 16px;
+ padding: 30px;
+ backdrop-filter: blur(10px);
+ transition: all 0.3s ease;
+ }
+
+ .phase-content:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+ border-color: rgba(96, 165, 250, 0.5);
+ }
+
+ .phase:nth-child(1) .phase-content { border-left: 4px solid #60a5fa; }
+ .phase:nth-child(2) .phase-content { border-right: 4px solid #34d399; }
+ .phase:nth-child(3) .phase-content { border-left: 4px solid #a78bfa; }
+ .phase:nth-child(4) .phase-content { border-right: 4px solid #f472b6; }
+ .phase:nth-child(5) .phase-content { border-left: 4px solid #fbbf24; }
+ .phase:nth-child(6) .phase-content { border-right: 4px solid #fb923c; }
+ .phase:nth-child(7) .phase-content { border-left: 4px solid #f87171; }
+
+ .phase-header {
+ display: flex;
+ align-items: center;
+ gap: 15px;
+ margin-bottom: 20px;
+ }
+
+ .phase-icon {
+ width: 50px;
+ height: 50px;
+ border-radius: 12px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 1.5em;
+ }
+
+ .phase:nth-child(1) .phase-icon { background: rgba(96, 165, 250, 0.2); }
+ .phase:nth-child(2) .phase-icon { background: rgba(52, 211, 153, 0.2); }
+ .phase:nth-child(3) .phase-icon { background: rgba(167, 139, 250, 0.2); }
+ .phase:nth-child(4) .phase-icon { background: rgba(244, 114, 182, 0.2); }
+ .phase:nth-child(5) .phase-icon { background: rgba(251, 191, 36, 0.2); }
+ .phase:nth-child(6) .phase-icon { background: rgba(251, 146, 60, 0.2); }
+ .phase:nth-child(7) .phase-icon { background: rgba(248, 113, 113, 0.2); }
+
+ .phase-title {
+ font-size: 1.4em;
+ font-weight: 600;
+ color: #f8fafc;
+ }
+
+ .phase-subtitle {
+ font-size: 0.9em;
+ color: #94a3b8;
+ margin-top: 3px;
+ }
+
+ /* Elements Grid */
+ .elements-grid {
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: 12px;
+ }
+
+ .element {
+ background: rgba(15, 23, 42, 0.6);
+ border-radius: 10px;
+ padding: 15px;
+ border: 1px solid rgba(148, 163, 184, 0.1);
+ transition: all 0.2s ease;
+ }
+
+ .element:hover {
+ background: rgba(15, 23, 42, 0.8);
+ border-color: rgba(96, 165, 250, 0.3);
+ }
+
+ .element-header {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ margin-bottom: 8px;
+ }
+
+ .element-number {
+ width: 24px;
+ height: 24px;
+ border-radius: 6px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 0.75em;
+ font-weight: 600;
+ color: #0f172a;
+ }
+
+ .phase:nth-child(1) .element-number { background: #60a5fa; }
+ .phase:nth-child(2) .element-number { background: #34d399; }
+ .phase:nth-child(3) .element-number { background: #a78bfa; }
+ .phase:nth-child(4) .element-number { background: #f472b6; }
+ .phase:nth-child(5) .element-number { background: #fbbf24; }
+ .phase:nth-child(6) .element-number { background: #fb923c; }
+ .phase:nth-child(7) .element-number { background: #f87171; }
+
+ .element-title {
+ font-weight: 600;
+ font-size: 0.95em;
+ color: #e2e8f0;
+ }
+
+ .element-desc {
+ font-size: 0.85em;
+ color: #94a3b8;
+ line-height: 1.5;
+ }
+
+ /* Priority Indicator */
+ .priority-bar {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ margin-top: 15px;
+ padding-top: 15px;
+ border-top: 1px solid rgba(148, 163, 184, 0.2);
+ }
+
+ .priority-label {
+ font-size: 0.8em;
+ color: #64748b;
+ text-transform: uppercase;
+ letter-spacing: 0.5px;
+ }
+
+ .priority-dots {
+ display: flex;
+ gap: 5px;
+ }
+
+ .dot {
+ width: 10px;
+ height: 10px;
+ border-radius: 50%;
+ background: rgba(148, 163, 184, 0.3);
+ }
+
+ .dot.active {
+ background: currentColor;
+ }
+
+ .phase:nth-child(1) .priority-bar { color: #60a5fa; }
+ .phase:nth-child(2) .priority-bar { color: #34d399; }
+ .phase:nth-child(3) .priority-bar { color: #a78bfa; }
+ .phase:nth-child(4) .priority-bar { color: #f472b6; }
+ .phase:nth-child(5) .priority-bar { color: #fbbf24; }
+ .phase:nth-child(6) .priority-bar { color: #fb923c; }
+ .phase:nth-child(7) .priority-bar { color: #f87171; }
+
+ /* Goal Box */
+ .goal-box {
+ background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(167, 139, 250, 0.1));
+ border: 2px solid rgba(96, 165, 250, 0.3);
+ border-radius: 20px;
+ padding: 40px;
+ text-align: center;
+ margin-bottom: 50px;
+ }
+
+ .goal-box h2 {
+ font-size: 1.8em;
+ font-weight: 600;
+ color: #f8fafc;
+ margin-bottom: 15px;
+ }
+
+ .goal-metrics {
+ display: flex;
+ justify-content: center;
+ gap: 60px;
+ margin-top: 30px;
+ flex-wrap: wrap;
+ }
+
+ .metric {
+ text-align: center;
+ }
+
+ .metric-value {
+ font-size: 2.5em;
+ font-weight: 700;
+ background: linear-gradient(90deg, #60a5fa, #a78bfa);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ }
+
+ .metric-label {
+ font-size: 0.9em;
+ color: #94a3b8;
+ margin-top: 5px;
+ }
+
+ /* Legend */
+ .legend {
+ display: flex;
+ justify-content: center;
+ gap: 30px;
+ margin-top: 50px;
+ flex-wrap: wrap;
+ }
+
+ .legend-item {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ font-size: 0.9em;
+ color: #94a3b8;
+ }
+
+ .legend-dot {
+ width: 16px;
+ height: 16px;
+ border-radius: 4px;
+ }
+
+ /* Responsive */
+ @media (max-width: 900px) {
+ .phase {
+ flex-direction: column !important;
+ }
+
+ .phase-badge {
+ position: relative;
+ left: auto;
+ top: auto;
+ transform: none;
+ margin: 0 auto;
+ }
+
+ .flow-container::before {
+ display: none;
+ }
+
+ .elements-grid {
+ grid-template-columns: 1fr;
+ }
+
+ .goal-metrics {
+ gap: 30px;
+ }
+ }
+
+ /* Print Styles */
+ @media print {
+ body {
+ background: white;
+ color: black;
+ }
+
+ .phase-content {
+ background: white;
+ border: 2px solid #ccc;
+ }
+
+ .flow-container::before {
+ background: #999;
+ }
+ }
+ </style>
+</head>
+<body>
+ <div class="container">
+ <h1>Marketing Plan Architecture</h1>
+ <p class="subtitle">Elements organized by relevance toward business success</p>
+
+ <!-- Goal Box -->
+ <div class="goal-box">
+ <h2>🎯 Ultimate Goal: Sustainable Business Success</h2>
+ <p style="color: #94a3b8; font-size: 1.1em;">A profitable, scalable business with predictable revenue and loyal customers</p>
+ <div class="goal-metrics">
+ <div class="metric">
+ <div class="metric-value">$20K+</div>
+ <div class="metric-label">Monthly Revenue</div>
+ </div>
+ <div class="metric">
+ <div class="metric-value">3x+</div>
+ <div class="metric-label">ROAS Target</div>
+ </div>
+ <div class="metric">
+ <div class="metric-value">25%+</div>
+ <div class="metric-label">Profit Margin</div>
+ </div>
+ <div class="metric">
+ <div class="metric-value">LTV &gt; CAC</div>
+ <div class="metric-label">Unit Economics</div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Flow Diagram -->
+ <div class="flow-container">
+
+ <!-- Phase 1: Foundation -->
+ <div class="phase">
+ <div class="phase-badge">1</div>
+ <div class="phase-content">
+ <div class="phase-header">
+ <div class="phase-icon">🏗️</div>
+ <div>
+ <div class="phase-title">Foundation</div>
+ <div class="phase-subtitle">The non-negotiable base</div>
+ </div>
+ </div>
+ <div class="elements-grid">
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">1.1</span>
+ <span class="element-title">Product-Market Fit</span>
+ </div>
+ <div class="element-desc">Solving a real problem for a specific audience. Without this, nothing else matters.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">1.2</span>
+ <span class="element-title">Clear Value Proposition</span>
+ </div>
+ <div class="element-desc">One sentence that explains why someone should buy from you vs. competitors.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">1.3</span>
+ <span class="element-title">Target Audience Definition</span>
+ </div>
+ <div class="element-desc">Specific demographics, psychographics, pain points, and buying triggers.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">1.4</span>
+ <span class="element-title">Competitive Positioning</span>
+ </div>
+ <div class="element-desc">Where you fit in the market and your unique angle/differentiation.</div>
+ </div>
+ </div>
+ <div class="priority-bar">
+ <span class="priority-label">Priority Level</span>
+ <div class="priority-dots">
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ </div>
+ <span style="font-size: 0.8em; color: #64748b;">Critical — Do not proceed without</span>
+ </div>
+ </div>
+ </div>
+
+ <!-- Phase 2: Conversion Engine -->
+ <div class="phase">
+ <div class="phase-badge">2</div>
+ <div class="phase-content">
+ <div class="phase-header">
+ <div class="phase-icon">🎯</div>
+ <div>
+ <div class="phase-title">Conversion Engine</div>
+ <div class="phase-subtitle">Turning visitors into customers</div>
+ </div>
+ </div>
+ <div class="elements-grid">
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">2.1</span>
+ <span class="element-title">High-Converting Landing Page</span>
+ </div>
+ <div class="element-desc">Clear headline, compelling copy, social proof, strong CTA, frictionless design.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">2.2</span>
+ <span class="element-title">Sales Copy & Messaging</span>
+ </div>
+ <div class="element-desc">Persuasive copy that addresses objections and motivates action.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">2.3</span>
+ <span class="element-title">Checkout & Payment Flow</span>
+ </div>
+ <div class="element-desc">Minimal steps, multiple payment options, trust signals, mobile-optimized.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">2.4</span>
+ <span class="element-title">Offer Structure</span>
+ </div>
+ <div class="element-desc">Pricing, bundles, guarantees, urgency/scarcity mechanisms.</div>
+ </div>
+ </div>
+ <div class="priority-bar">
+ <span class="priority-label">Priority Level</span>
+ <div class="priority-dots">
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ </div>
+ <span style="font-size: 0.8em; color: #64748b;">Critical — Revenue depends on this</span>
+ </div>
+ </div>
+ </div>
+
+ <!-- Phase 3: Traffic Acquisition -->
+ <div class="phase">
+ <div class="phase-badge">3</div>
+ <div class="phase-content">
+ <div class="phase-header">
+ <div class="phase-icon">🚦</div>
+ <div>
+ <div class="phase-title">Traffic Acquisition</div>
+ <div class="phase-subtitle">Getting qualified visitors</div>
+ </div>
+ </div>
+ <div class="elements-grid">
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">3.1</span>
+ <span class="element-title">Paid Advertising (PPC)</span>
+ </div>
+ <div class="element-desc">Meta Ads, Google Ads, TikTok Ads — scalable but requires budget and testing.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">3.2</span>
+ <span class="element-title">Organic Social Media</span>
+ </div>
+ <div class="element-desc">Content that builds audience and drives engagement over time.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">3.3</span>
+ <span class="element-title">SEO & Content Marketing</span>
+ </div>
+ <div class="element-desc">Long-term traffic through search rankings and valuable content.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">3.4</span>
+ <span class="element-title">Partnerships & Affiliates</span>
+ </div>
+ <div class="element-desc">Leveraging other people's audiences through collaborations.</div>
+ </div>
+ </div>
+ <div class="priority-bar">
+ <span class="priority-label">Priority Level</span>
+ <div class="priority-dots">
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ <div class="dot"></div>
+ </div>
+ <span style="font-size: 0.8em; color: #64748b;">High — Start with 1-2 channels</span>
+ </div>
+ </div>
+ </div>
+
+ <!-- Phase 4: Email & Retention -->
+ <div class="phase">
+ <div class="phase-badge">4</div>
+ <div class="phase-content">
+ <div class="phase-header">
+ <div class="phase-icon">📧</div>
+ <div>
+ <div class="phase-title">Email & Retention</div>
+ <div class="phase-subtitle">Maximizing customer lifetime value</div>
+ </div>
+ </div>
+ <div class="elements-grid">
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">4.1</span>
+ <span class="element-title">Lead Capture System</span>
+ </div>
+ <div class="element-desc">Pop-ups, lead magnets, welcome offers to build email list.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">4.2</span>
+ <span class="element-title">Automated Email Sequences</span>
+ </div>
+ <div class="element-desc">Welcome series, abandoned cart, post-purchase, win-back campaigns.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">4.3</span>
+ <span class="element-title">Newsletter & Broadcasts</span>
+ </div>
+ <div class="element-desc">Regular value-driven communication to stay top-of-mind.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">4.4</span>
+ <span class="element-title">Loyalty & Subscription</span>
+ </div>
+ <div class="element-desc">Recurring revenue models, rewards programs, exclusive member benefits.</div>
+ </div>
+ </div>
+ <div class="priority-bar">
+ <span class="priority-label">Priority Level</span>
+ <div class="priority-dots">
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ <div class="dot"></div>
+ </div>
+ <span style="font-size: 0.8em; color: #64748b;">High — Highest ROI channel</span>
+ </div>
+ </div>
+ </div>
+
+ <!-- Phase 5: Social Proof -->
+ <div class="phase">
+ <div class="phase-badge">5</div>
+ <div class="phase-content">
+ <div class="phase-header">
+ <div class="phase-icon">⭐</div>
+ <div>
+ <div class="phase-title">Social Proof & Trust</div>
+ <div class="phase-subtitle">Reducing friction and building confidence</div>
+ </div>
+ </div>
+ <div class="elements-grid">
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">5.1</span>
+ <span class="element-title">Customer Reviews</span>
+ </div>
+ <div class="element-desc">Product reviews, testimonials, case studies, user-generated content.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">5.2</span>
+ <span class="element-title">Trust Signals</span>
+ </div>
+ <div class="element-desc">Security badges, guarantees, clear policies, contact info, about page.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">5.3</span>
+ <span class="element-title">Influencer Validation</span>
+ </div>
+ <div class="element-desc">Third-party endorsements, unboxing videos, expert recommendations.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">5.4</span>
+ <span class="element-title">Community Building</span>
+ </div>
+ <div class="element-desc">Discord, Facebook groups, forums — engaged customers become advocates.</div>
+ </div>
+ </div>
+ <div class="priority-bar">
+ <span class="priority-label">Priority Level</span>
+ <div class="priority-dots">
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ <div class="dot"></div>
+ <div class="dot"></div>
+ </div>
+ <span style="font-size: 0.8em; color: #64748b;">Medium-High — Builds over time</span>
+ </div>
+ </div>
+ </div>
+
+ <!-- Phase 6: Optimization -->
+ <div class="phase">
+ <div class="phase-badge">6</div>
+ <div class="phase-content">
+ <div class="phase-header">
+ <div class="phase-icon">📊</div>
+ <div>
+ <div class="phase-title">Analytics & Optimization</div>
+ <div class="phase-subtitle">Data-driven improvement</div>
+ </div>
+ </div>
+ <div class="elements-grid">
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">6.1</span>
+ <span class="element-title">Conversion Tracking</span>
+ </div>
+ <div class="element-desc">Proper analytics setup, pixel implementation, attribution modeling.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">6.2</span>
+ <span class="element-title">A/B Testing</span>
+ </div>
+ <div class="element-desc">Continuous testing of headlines, images, CTAs, pricing, offers.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">6.3</span>
+ <span class="element-title">Funnel Analysis</span>
+ </div>
+ <div class="element-desc">Identifying drop-off points and optimization opportunities.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">6.4</span>
+ <span class="element-title">Customer Feedback Loop</span>
+ </div>
+ <div class="element-desc">Surveys, support tickets, reviews — listen and iterate based on input.</div>
+ </div>
+ </div>
+ <div class="priority-bar">
+ <span class="priority-label">Priority Level</span>
+ <div class="priority-dots">
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ <div class="dot"></div>
+ <div class="dot"></div>
+ </div>
+ <span style="font-size: 0.8em; color: #64748b;">Medium — Start basic, expand</span>
+ </div>
+ </div>
+ </div>
+
+ <!-- Phase 7: Scale -->
+ <div class="phase">
+ <div class="phase-badge">7</div>
+ <div class="phase-content">
+ <div class="phase-header">
+ <div class="phase-icon">🚀</div>
+ <div>
+ <div class="phase-title">Scale & Expansion</div>
+ <div class="phase-subtitle">Growing what works</div>
+ </div>
+ </div>
+ <div class="elements-grid">
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">7.1</span>
+ <span class="element-title">Ad Budget Scaling</span>
+ </div>
+ <div class="element-desc">Increase spend on profitable campaigns while maintaining ROAS.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">7.2</span>
+ <span class="element-title">New Product Lines</span>
+ </div>
+ <div class="element-desc">Expand catalog based on customer demand and market research.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">7.3</span>
+ <span class="element-title">New Channels</span>
+ </div>
+ <div class="element-desc">Add traffic sources once core channels are optimized.</div>
+ </div>
+ <div class="element">
+ <div class="element-header">
+ <span class="element-number">7.4</span>
+ <span class="element-title">Operational Systems</span>
+ </div>
+ <div class="element-desc">Automation, team building, processes that support growth.</div>
+ </div>
+ </div>
+ <div class="priority-bar">
+ <span class="priority-label">Priority Level</span>
+ <div class="priority-dots">
+ <div class="dot active"></div>
+ <div class="dot active"></div>
+ <div class="dot"></div>
+ <div class="dot"></div>
+ <div class="dot"></div>
+ </div>
+ <span style="font-size: 0.8em; color: #64748b;">Low — Only after 1-6 are working</span>
+ </div>
+ </div>
+ </div>
+
+ </div>
+
+ <!-- Legend -->
+ <div class="legend">
+ <div class="legend-item">
+ <div class="legend-dot" style="background: #60a5fa;"></div>
+ <span>Foundation</span>
+ </div>
+ <div class="legend-item">
+ <div class="legend-dot" style="background: #34d399;"></div>
+ <span>Conversion</span>
+ </div>
+ <div class="legend-item">
+ <div class="legend-dot" style="background: #a78bfa;"></div>
+ <span>Traffic</span>
+ </div>
+ <div class="legend-item">
+ <div class="legend-dot" style="background: #f472b6;"></div>
+ <span>Retention</span>
+ </div>
+ <div class="legend-item">
+ <div class="legend-dot" style="background: #fbbf24;"></div>
+ <span>Trust</span>
+ </div>
+ <div class="legend-item">
+ <div class="legend-dot" style="background: #fb923c;"></div>
+ <span>Optimization</span>
+ </div>
+ <div class="legend-item">
+ <div class="legend-dot" style="background: #f87171;"></div>
+ <span>Scale</span>
+ </div>
+ </div>
+
+ </div>
+</body>
+</html>
